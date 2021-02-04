@@ -3,7 +3,7 @@
   "url": "https://nostalgic-golick-8102fa.netlify.app/",
   "description": "JAMStack example site, to showcase my dev skills",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "I am writing about my experiences as a happy subscriber to 'Alex is Cool!'.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://nostalgic-golick-8102fa.netlify.app/"
