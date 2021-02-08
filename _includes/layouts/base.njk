@@ -10,52 +10,27 @@
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
     <link rel="stylesheet" href="{{ '/css/bootstrap/css/bootstrap.min.css' | url }}">
-       <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
   </head>
-  <body>
-    <!-- Start Header Area -->
-    <header class="header">
-        <div class="navbar-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <a href="{{ '/' | url }}">{{ metadata.title }}</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul class="nav">
-                                {%- for entry in collections.all | eleventyNavigation %}
-                                  <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-                                {%- endfor %}
-                                </ul>
-                            </div>
-                            <!-- navbar collapse -->
-                        </nav>
-                        <!-- navbar -->
-                    </div>
-                </div>
-                <!-- row -->
-            </div>
-            <!-- container -->
-        </div>
-        <!-- navbar area -->
-    </header>
-    <!-- End Header Area -->
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
+      {% include '../partials/header.njk' %}
+      
 
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-    <h2>Alex is cool</h2>
+      <main role="main" class="inner cover {% if templateClass %} '{{ templateClass }}'{% endif %}">
+        <h2>Welcome to Me!... Whoever I be?</h2>
 
-      {{ content | safe }}
-    </main>
+       {{ content | safe }}
+        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+        </p>
+      </main>
 
-    <footer></footer>
+      {% include '../partials/footer.njk' %}
+    </div>
+
 
     <!-- Current page: {{ page.url | url }} -->
     <script src="{{ '/css/bootstrap/js/bootstrap.min.js' | url }}"></script>
